@@ -1,3 +1,7 @@
+# Created by https://www.toptal.com/developers/gitignore/api/platformio,visualstudiocode,c++
+# Edit at https://www.toptal.com/developers/gitignore?templates=platformio,visualstudiocode,c++
+
+### C++ ###
 # Prerequisites
 *.d
 
@@ -30,3 +34,31 @@
 *.exe
 *.out
 *.app
+
+### PlatformIO ###
+.pioenvs
+.piolibdeps
+.clang_complete
+.gcc-flags.json
+.pio
+
+### VisualStudioCode ###
+.vscode/*
+# !.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/platformio,visualstudiocode,c++
