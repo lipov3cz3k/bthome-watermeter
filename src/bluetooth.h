@@ -5,4 +5,6 @@
 void ble_init(void);
 void ble_deinit(void);
 
+void ble_advert(void);
+
 #endif // _BT_H_
