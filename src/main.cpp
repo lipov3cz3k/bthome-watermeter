@@ -2,6 +2,7 @@
 #include "esp_sleep.h"
 #include <stdio.h>
 
+#include "bluetooth.h"
 #include "ulp.h"
 
 // app_main must link to C code
@@ -18,6 +19,7 @@ extern "C"
 void app_main(void)
 {
     ESP_LOGI("main", "Starting up");
+    ble_init();
     esp_sleep_wakeup_cause_t cause = esp_sleep_get_wakeup_cause();
     if (cause != ESP_SLEEP_WAKEUP_ULP)
     {
@@ -31,6 +33,7 @@ void app_main(void)
     }
 
     ESP_LOGI("main", "Entering deep sleep\n\n");
+    ble_deinit();
     ESP_ERROR_CHECK(esp_sleep_enable_ulp_wakeup());
     esp_deep_sleep_start();
 }
