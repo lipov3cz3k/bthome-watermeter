@@ -65,7 +65,7 @@ void init_ulp_program(void)
     ESP_ERROR_CHECK(err);
 }
 
-void update_pulse_count(void)
+uint32_t update_pulse_count(void)
 {
     const char *namespace_ = "plusecnt";
     const char *count_key = "count";
@@ -90,4 +90,5 @@ void update_pulse_count(void)
     ESP_ERROR_CHECK(nvs_commit(handle));
     nvs_close(handle);
     ESP_LOGI("ulp", "Wrote updated pulse count to NVS: %5ld\n", pulse_count);
+    return pulse_count;
 }

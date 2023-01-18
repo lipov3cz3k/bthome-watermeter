@@ -52,16 +52,20 @@ void ble_deinit(void)
     ESP_ERROR_CHECK(esp_bt_controller_deinit());
 }
 
-uint8_t build_data_advert(uint8_t data[])
+uint8_t build_data_advert(uint8_t data[], uint32_t pulse_count)
 {
+    bthome::Measurement pc_measurement(bthome::constants::ObjectId::VOLUME_LITERS, static_cast<uint64_t>(pulse_count * 10));
+
+    advertisement.addMeasurement(pc_measurement);
+
     memcpy(&data[0], advertisement.getPayload(), advertisement.getPayloadSize());
     return advertisement.getPayloadSize();
 }
 
-void ble_advert(void)
+void ble_advert(uint32_t pulseCount)
 {
     // Encode sensor data
-    uint8_t const dataLength = build_data_advert(&advertData[0]);
+    uint8_t const dataLength = build_data_advert(&advertData[0], pulseCount);
 
     ESP_LOGI("ble", "Advert size: %i bytes", dataLength);
 

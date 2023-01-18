@@ -5,6 +5,6 @@
 void ble_init(void);
 void ble_deinit(void);
 
-void ble_advert(void);
+void ble_advert(uint32_t pulseCount);
 
 #endif // _BT_H_

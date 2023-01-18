@@ -29,9 +29,9 @@ void app_main(void)
     else
     {
         ESP_LOGI("main", "ULP wakeup, saving pulse count");
-        update_pulse_count();
     }
-    ble_advert();
+    uint32_t pulse_count = update_pulse_count();
+    ble_advert(pulse_count);
 
     ESP_LOGI("main", "Entering deep sleep\n\n");
     ble_deinit();
