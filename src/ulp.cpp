@@ -21,7 +21,7 @@ void init_ulp_program(void)
     ESP_ERROR_CHECK(err);
 
     /* GPIO used for pulse counting. */
-    gpio_num_t gpio_num = GPIO_NUM_0;
+    gpio_num_t gpio_num = GPIO_NUM_4;
     int rtcio_num = rtc_io_number_get(gpio_num);
     assert(rtc_gpio_is_valid_gpio(gpio_num) && "GPIO used for pulse counting must be an RTC IO");
 
@@ -44,7 +44,7 @@ void init_ulp_program(void)
     rtc_gpio_init(gpio_num);
     rtc_gpio_set_direction(gpio_num, RTC_GPIO_MODE_INPUT_ONLY);
     rtc_gpio_pulldown_dis(gpio_num);
-    rtc_gpio_pullup_dis(gpio_num);
+    rtc_gpio_pullup_en(gpio_num);
     rtc_gpio_hold_en(gpio_num);
 
     /* Disconnect GPIO12 and GPIO15 to remove current drain through
