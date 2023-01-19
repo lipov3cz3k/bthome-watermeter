@@ -75,7 +75,7 @@ extern "C"
                 BUTTON_EVENT = 0x3A,
                 DIMMER_EVENT = 0x3C,
                 COUNT_MEDIUM = 0x3D,
-                COUNT_LARGE = 0x3D,
+                COUNT_LARGE = 0x3E,
                 ROTATION = 0x3F,
                 DISTANCE_MILLIMETERS = 0x40,
                 DISTANCE_METERS = 0x41,
@@ -84,7 +84,10 @@ extern "C"
                 SPEED = 0x44,
                 TEMPERATURE_COARSE = 0x45,
                 UV_INDEX = 0x46,
-                LAST_DEFINED_ID = 0x47,
+                VOLUME_LITERS = 0X47,
+                VOLUME_MILLILITERS = 0X48,
+                VOLUME_FLOW_RATE = 0x49,
+                LAST_DEFINED_ID = 0x4A,
                 MAX_OBJECT_ID = 256
             };
 

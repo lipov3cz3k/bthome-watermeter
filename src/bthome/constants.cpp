@@ -104,9 +104,20 @@ namespace bthome
             {.factor = 1, .length = 1},
             // MOISTURE_COARSE
             {.factor = 1, .length = 1},
-            // BUTTON_EVENT
-            // DIMMER_EVENT
-            // COUNT_MEDIUM
+            {}, // empty 0x30
+            {}, // empty 0x31
+            {}, // empty 0x32
+            {}, // empty 0x33
+            {}, // empty 0x34
+            {}, // empty 0x35
+            {}, // empty 0x36
+            {}, // empty 0x37
+            {}, // empty 0x38
+            {}, // empty 0x39
+            {}, // BUTTON_EVENT
+            {}, // empty 0x3B
+            {}, // DIMMER_EVENT
+            // COUNT_MEDIUM 0x3D
             {.factor = 1, .length = 2},
             // COUNT_LARGE
             {.factor = 1, .length = 4},
@@ -126,6 +137,12 @@ namespace bthome
             {.factor = 10, .length = 2},
             // UV_INDEX
             {.factor = 10, .length = 1},
+            // VOLUME_LITERS
+            {.factor = 10, .length = 2},
+            // VOLUME_MILLILITERS
+            {.factor = 100, .length = 2},
+            // VOLUME_FLOW_RATE
+            {.factor = 1000, .length = 2},
         };
 
     };
