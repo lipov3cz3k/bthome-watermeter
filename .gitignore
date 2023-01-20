@@ -41,6 +41,8 @@
 .clang_complete
 .gcc-flags.json
 .pio
+sdkconfig*
+!sdkconfig.defaults
 
 ### VisualStudioCode ###
 .vscode/*
