@@ -1,3 +1,9 @@
+/**
+ * This file is shamlessly copied from the following repository:
+ * https://github.com/espressif/esp-idf/tree/v4.3.4/examples/system/ulp/
+ * Apache 2.0 License applies.
+ */
+
 #include "esp32/ulp.h"
 #include "driver/gpio.h"
 #include "driver/rtc_io.h"

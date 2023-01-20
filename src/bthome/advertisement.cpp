@@ -1,3 +1,8 @@
+/**
+ * This file is shamlessly copied from the following repository:
+ * https://github.com/stumpylog/bthome-weather-station/blob/main/components/bthome/
+ * MLP2.0 License applies.
+ */
 
 #include "esp_log.h"
 // TODO This header isn't found?
