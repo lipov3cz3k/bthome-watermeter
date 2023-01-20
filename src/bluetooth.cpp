@@ -14,7 +14,7 @@
 // Store the packet ID and persist it across sleep
 static RTC_DATA_ATTR uint8_t packetId{0};
 
-static bthome::Advertisement advertisement(std::string("BTWatermater"));
+static bthome::AdvertisementWithId advertisement(std::string("BTWatermater"), packetId);
 
 static esp_ble_adv_params_t ble_adv_params = {
     .adv_int_min = 0x20,
@@ -54,6 +54,7 @@ void ble_deinit(void)
 
 uint8_t build_data_advert(uint8_t data[], uint32_t pulse_count)
 {
+    packetId++;
     bthome::Measurement pc_measurement(bthome::constants::ObjectId::VOLUME_LITERS, static_cast<uint64_t>(pulse_count * 10));
 
     advertisement.addMeasurement(pc_measurement);
