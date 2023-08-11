@@ -150,14 +150,14 @@ namespace bthome
     AdvertisementWithId::AdvertisementWithId(uint8_t const packetId)
         : Advertisement()
     {
-        Measurement packetIdData(constants::ObjectId::PACKET_ID, static_cast<uint64_t>(packetId));
+        Measurement packetIdData(constants::ObjectId::PACKET_ID__NONE, static_cast<uint64_t>(packetId));
         this->addMeasurement(packetIdData);
     }
 
     AdvertisementWithId::AdvertisementWithId(std::string const &name, uint8_t const packetId)
         : Advertisement(name)
     {
-        Measurement packetIdData(constants::ObjectId::PACKET_ID, static_cast<uint64_t>(packetId));
+        Measurement packetIdData(constants::ObjectId::PACKET_ID__NONE, static_cast<uint64_t>(packetId));
         this->addMeasurement(packetIdData);
     }
 

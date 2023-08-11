@@ -55,7 +55,7 @@ void ble_deinit(void)
 uint8_t build_data_advert(uint8_t data[], uint32_t pulse_count)
 {
     packetId++;
-    bthome::Measurement pc_measurement(bthome::constants::ObjectId::COUNT_LARGE, static_cast<uint64_t>(pulse_count));
+    bthome::Measurement pc_measurement(bthome::constants::ObjectId::COUNT_LARGE__NONE, static_cast<uint64_t>(pulse_count));
 
     advertisement.addMeasurement(pc_measurement);
 

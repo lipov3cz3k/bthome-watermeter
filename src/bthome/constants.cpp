@@ -13,101 +13,101 @@ namespace bthome
     {
 
         const BTHomeDataTypeInfo InfoLookup[ObjectId::MAX_OBJECT_ID] = {
-            // PACKET_ID
+            // PACKET_ID__NONE
             {.factor = 1, .length = 1},
+            // BATTERY__PERCENTAGE
+            {.factor = 1, .length = 1},
+            // TEMPERATURE_PRECISE__CELSIUS
+            {.factor = 100, .length = 2},
+            // HUMIDITY_PRECISE__PERCENTAGE
+            {.factor = 100, .length = 2},
+            // PRESSURE__MBAR
+            {.factor = 100, .length = 3},
+            // LIGHT__LIGHT_LUX
+            {.factor = 100, .length = 3},
+            // MASS__MASS_KILOGRAMS
+            {.factor = 100, .length = 2},
+            // MASS__MASS_POUNDS
+            {.factor = 100, .length = 2},
+            // DEW_POINT__TEMP_CELSIUS
+            {.factor = 100, .length = 2},
+            // COUNT_SMALL__NONE
+            {.factor = 1, .length = 1},
+            // ENERGY_MEDIUM__ENERGY_KILO_WATT_HOUR
+            {.factor = 1000, .length = 3},
+            // POWER__POWER_WATT
+            {.factor = 100, .length = 3},
+            // VOLTAGE_PRECISE__ELECTRIC_POTENTIAL_VOLT
+            {.factor = 1000, .length = 2},
+            // PM25__CONCENTRATION_MICROGRAMS_PER_CUBIC_METER
+            {.factor = 1, .length = 2},
+            // PM10__CONCENTRATION_MICROGRAMS_PER_CUBIC_METER
+            {.factor = 1, .length = 2},
+            // GENERIC
+            {.factor = 1, .length = 1},
+            // POWER
+            {.factor = 1, .length = 1},
+            // OPENING
+            {.factor = 1, .length = 1},
+            // CO2__CONCENTRATION_PARTS_PER_MILLION
+            {.factor = 1, .length = 2},
+            // VOLATILE_ORGANIC_COMPOUNDS__CONCENTRATION_MICROGRAMS_PER_CUBIC_METER
+            {.factor = 1, .length = 2},
+            // MOISTURE_PRECISE__PERCENTAGE
+            {.factor = 100, .length = 2},
             // BATTERY
             {.factor = 1, .length = 1},
-            // TEMPERATURE_PRECISE
-            {.factor = 100, .length = 2},
-            // HUMIDITY_PRECISE
-            {.factor = 100, .length = 2},
-            // PRESSURE
-            {.factor = 100, .length = 3},
-            // ILLUMINANCE
-            {.factor = 100, .length = 3},
-            // MASS_KILOS
-            {.factor = 100, .length = 2},
-            // MASS_POUNDS
-            {.factor = 100, .length = 2},
-            // DEW_POINT
-            {.factor = 100, .length = 2},
-            // COUNT_SMALL
+            // BATTERY_CHARGING
             {.factor = 1, .length = 1},
-            // ENERGY
-            {.factor = 100, .length = 3},
-            // POWER
-            {.factor = 100, .length = 3},
-            // VOLTAGE
-            {.factor = 1000, .length = 2},
-            // PM_2_5
-            {.factor = 1, .length = 2},
-            // PM_10
-            {.factor = 1, .length = 2},
-            // GENERIC_BOOL
+            // CO
             {.factor = 1, .length = 1},
-            // POWER_STATE
+            // COLD
             {.factor = 1, .length = 1},
-            // OPENING_STATE
+            // CONNECTIVITY
             {.factor = 1, .length = 1},
-            // CO2
-            {.factor = 1, .length = 2},
-            // TOTAL_VOC
+            // DOOR
             {.factor = 1, .length = 1},
-            // MOISTURE_PRECISE
-            {.factor = 100, .length = 2},
-            // BATTERY_STATE
+            // GARAGE_DOOR
             {.factor = 1, .length = 1},
-            // BATTERY_CHARGE_STATE
+            // GAS
             {.factor = 1, .length = 1},
-            // CARBON_MONOXIDE_STATE
+            // HEAT
             {.factor = 1, .length = 1},
-            // COLD_STATE
+            // LIGHT
             {.factor = 1, .length = 1},
-            // CONNECTIVITY_STATE
+            // LOCK
             {.factor = 1, .length = 1},
-            // DOOR_STATE
+            // MOISTURE
             {.factor = 1, .length = 1},
-            // GARAGE_DOOR_STATE
+            // MOTION
             {.factor = 1, .length = 1},
-            // GAS_STATE
+            // MOVING
             {.factor = 1, .length = 1},
-            // HEAT_STATE
+            // OCCUPANCY
             {.factor = 1, .length = 1},
-            // LIGHT_STATE
+            // PLUG
             {.factor = 1, .length = 1},
-            // LOCK_STATE
+            // PRESENCE
             {.factor = 1, .length = 1},
-            // MOISTURE_STATE
+            // PROBLEM
             {.factor = 1, .length = 1},
-            // MOTION_STATE
+            // RUNNING
             {.factor = 1, .length = 1},
-            // MOVING_STATE
+            // SAFETY
             {.factor = 1, .length = 1},
-            // OCCUPANCY_STATE
+            // SMOKE
             {.factor = 1, .length = 1},
-            // PLUG_STATE
+            // SOUND
             {.factor = 1, .length = 1},
-            // PRESENCE_STATE
+            // TAMPER
             {.factor = 1, .length = 1},
-            // PROBLEM_STATE
+            // VIBRATION
             {.factor = 1, .length = 1},
-            // RUNNING_STATE
+            // WINDOW
             {.factor = 1, .length = 1},
-            // SAFETY_STATE
+            // HUMIDITY_COARSE__PERCENTAGE
             {.factor = 1, .length = 1},
-            // SMOKE_STATE
-            {.factor = 1, .length = 1},
-            // SOUND_STATE
-            {.factor = 1, .length = 1},
-            // TAMPER_STATE
-            {.factor = 1, .length = 1},
-            // VIBRATION_STATE
-            {.factor = 1, .length = 1},
-            // WINDOW_STATE
-            {.factor = 1, .length = 1},
-            // HUMIDITY_COARSE
-            {.factor = 1, .length = 1},
-            // MOISTURE_COARSE
+            // MOISTURE_COARSE__PERCENTAGE
             {.factor = 1, .length = 1},
             {}, // empty 0x30
             {}, // empty 0x31
@@ -119,34 +119,54 @@ namespace bthome
             {}, // empty 0x37
             {}, // empty 0x38
             {}, // empty 0x39
-            {}, // BUTTON_EVENT
+            // BUTTON
+            {.factor = 1, .length = 1},
             {}, // empty 0x3B
-            {}, // DIMMER_EVENT
-            // COUNT_MEDIUM 0x3D
+            // DIMMER
             {.factor = 1, .length = 2},
-            // COUNT_LARGE
+            // COUNT_MEDIUM__NONE
+            {.factor = 1, .length = 2},
+            // COUNT_LARGE__NONE
             {.factor = 1, .length = 4},
-            // ROTATION
+            // ROTATION__DEGREE
             {.factor = 10, .length = 2},
-            // DISTANCE_MILLIMETERS
+            // DISTANCE__LENGTH_MILLIMETERS
             {.factor = 1, .length = 2},
-            // DISTANCE_METERS
+            // DISTANCE__LENGTH_METERS
             {.factor = 10, .length = 2},
-            // DURATION
+            // DURATION__TIME_SECONDS
             {.factor = 1000, .length = 3},
-            // CURRENT
+            // CURRENT__ELECTRIC_CURRENT_AMPERE
             {.factor = 1000, .length = 2},
-            // SPEED
+            // SPEED__SPEED_METERS_PER_SECOND
             {.factor = 100, .length = 2},
-            // TEMPERATURE_COARSE
+            // TEMPERATURE_COARSE__CELSIUS
             {.factor = 10, .length = 2},
-            // UV_INDEX
+            // UV_INDEX__NONE
             {.factor = 10, .length = 1},
-            // VOLUME_LITERS
+            // VOLUME_COARSE__VOLUME_LITERS
             {.factor = 10, .length = 2},
-            // VOLUME_MILLILITERS
-            {.factor = 100, .length = 2},
-            // VOLUME_FLOW_RATE
+            // VOLUME__VOLUME_MILLILITERS
+            {.factor = 1, .length = 2},
+            // VOLUME_FLOW_RATE__VOLUME_FLOW_RATE_CUBIC_METERS_PER_HOUR
+            {.factor = 1000, .length = 2},
+            // VOLTAGE_COARSE__ELECTRIC_POTENTIAL_VOLT
+            {.factor = 10, .length = 2},
+            // GAS_MEDIUM__VOLUME_CUBIC_METERS
+            {.factor = 1000, .length = 3},
+            // GAS_LARGE__VOLUME_CUBIC_METERS
+            {.factor = 1000, .length = 4},
+            // ENERGY_LARGE__ENERGY_KILO_WATT_HOUR
+            {.factor = 1000, .length = 4},
+            // VOLUME_PRECISE__VOLUME_LITERS
+            {.factor = 1000, .length = 4},
+            // WATER__VOLUME_LITERS
+            {.factor = 1000, .length = 4},
+            // TIMESTAMP__NONE
+            {.factor = 1, .length = 4},
+            // ACCELERATION__ACCELERATION_METERS_PER_SQUARE_SECOND
+            {.factor = 1000, .length = 2},
+            // GYROSCOPE__GYROSCOPE_DEGREES_PER_SECOND
             {.factor = 1000, .length = 2},
         };
 
