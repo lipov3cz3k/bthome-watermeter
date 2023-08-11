@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "py-to-constants"
+version = "0.1.0"
+description = ""
+authors = ["Tomas Lipovsky <tomas@lipovo.cz>"]
+readme = "README.md"
+packages = [{include = "py_to_constants"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+bthome-ble = "^3.0.0"
+
+
+[tool.poetry.group.lint.dependencies]
+black = "^23.7.0"
+ruff = "^0.0.284"
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+target-version = "py311"
+select = ["E", "F", "W", "C", "PL"]
+line-length = 120
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
