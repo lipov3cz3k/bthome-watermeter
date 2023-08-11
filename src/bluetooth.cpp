@@ -58,6 +58,8 @@ uint8_t build_data_advert(uint8_t data[], uint32_t pulse_count)
     uint64_t pc = static_cast<uint64_t>(pulse_count) * 1000;
     bthome::Measurement pc_measurement(bthome::constants::ObjectId::WATER__VOLUME_LITERS, pc);
 
+    // ESP_LOGI("ble", "packeId 0x%02x, PC %llu", packetId, pc);
+
     advertisement.addMeasurement(pc_measurement);
 
     memcpy(&data[0], advertisement.getPayload(), advertisement.getPayloadSize());
@@ -68,6 +70,11 @@ void ble_advert(uint32_t pulseCount)
 {
     // Encode sensor data
     uint8_t const dataLength = build_data_advert(&advertData[0], pulseCount);
+
+    // for (int i = 0; i < dataLength; i++)
+    // {
+    //     printf("%02X ", advertData[i]);
+    // }
 
     ESP_LOGI("ble", "Advert size: %i bytes", dataLength);
 
