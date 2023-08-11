@@ -118,6 +118,7 @@ extern "C"
             enum BTHOME_DEVICE_INFO_SHIFTS
             {
                 ENCRYPTED = 0,
+                TRIGGER_BASED = 2,
                 VERSION = 5
             };
 
