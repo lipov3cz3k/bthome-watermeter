@@ -99,7 +99,7 @@ namespace bthome
 
     void Advertisement::writeDeviceInfo(void)
     {
-        this->writeByte((0 << constants::BTHOME_DEVICE_INFO_SHIFTS::ENCRYPTED) | (constants::BTHOME_V2 << constants::BTHOME_DEVICE_INFO_SHIFTS::VERSION));
+        this->writeByte((0 << constants::BTHOME_DEVICE_INFO_SHIFTS::ENCRYPTED) | (1 << constants::BTHOME_DEVICE_INFO_SHIFTS::TRIGGER_BASED) | (constants::BTHOME_V2 << constants::BTHOME_DEVICE_INFO_SHIFTS::VERSION));
 
         this->m_data[this->m_serviceDataSizeIdx] += 1;
     }
@@ -150,14 +150,14 @@ namespace bthome
     AdvertisementWithId::AdvertisementWithId(uint8_t const packetId)
         : Advertisement()
     {
-        Measurement packetIdData(constants::ObjectId::PACKET_ID, static_cast<uint64_t>(packetId));
+        Measurement packetIdData(constants::ObjectId::PACKET_ID__NONE, static_cast<uint64_t>(packetId));
         this->addMeasurement(packetIdData);
     }
 
     AdvertisementWithId::AdvertisementWithId(std::string const &name, uint8_t const packetId)
         : Advertisement(name)
     {
-        Measurement packetIdData(constants::ObjectId::PACKET_ID, static_cast<uint64_t>(packetId));
+        Measurement packetIdData(constants::ObjectId::PACKET_ID__NONE, static_cast<uint64_t>(packetId));
         this->addMeasurement(packetIdData);
     }
 
